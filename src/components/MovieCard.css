@@ -1,0 +1,21 @@
+.movie-card img{
+    max-width: 300px;
+    max-height: 500px;
+}
+
+.movie-card h2 {
+    font-size: larger;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.movie-card{
+    height: 600px;
+    width: 400px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}

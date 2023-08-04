@@ -1,0 +1,33 @@
+#popcorn {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    background-color: rgb(208, 80, 80);
+}
+
+.header nav{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: black;
+}
+
+#header{
+    font-size: xx-large;
+    font-weight: bold;
+}
