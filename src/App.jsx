@@ -7,12 +7,12 @@ import WatchList from "./components/WatchList";
 import { Routes, Route } from "react-router-dom";
 import MovieReview from "./components/MovieReview";
 import axios from "axios";
-
+import Login from "./components/Login";
 
 function App() {
   const [movieList, setMovieList] = useState([]);
   const [watchList, setWatchList] = useState([]);
-  const [inWatchList, setInWatchList] = useState(false)
+  const [inWatchList, setInWatchList] = useState(false);
 
   const movieDB = async () => {
     try {
@@ -21,7 +21,7 @@ function App() {
           import.meta.env.VITE_APP_API_KEY
         }&language=en-US&pages=1`
       );
-      console.log(res.data.results)
+      console.log(res.data.results);
       setMovieList(res.data.results);
     } catch (err) {
       console.log(err);
@@ -34,7 +34,7 @@ function App() {
 
   const addToWatchList = (movie) => {
     setWatchList([...watchList, movie]);
-    setInWatchList(true)
+    setInWatchList(true);
   };
 
   const removeWatchList = (movie) => {
@@ -72,6 +72,7 @@ function App() {
           }
         />
         <Route path="review" element={<MovieReview />} />
+        <Route path="login" element={<Login />} />
       </Routes>
     </Fragment>
   );

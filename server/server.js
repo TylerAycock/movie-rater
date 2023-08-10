@@ -4,6 +4,7 @@ const cors = require('cors')
 const port = process.env.PORT
 const { db } = require('./database')
 
+
 const { User } = require('./controller/models/users')
 const { Review } = require('./controller/models/reviews')
 
@@ -14,11 +15,15 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+
+
 // require the controller file here
-const { postReview } = require('./controller/controller')
+const { postReview ,addUser, logInUser } = require('./controller/controller')
 
 //set up endpoints here 
 app.post('/review', postReview)
+app.post('/user', addUser)
+app.post('/login', logInUser)
 
 
 //database sync
