@@ -2,8 +2,8 @@ const { Review } = require('./models/reviews')
 const { User } = require('./models/users')
 const bcrypt = require('bcrypt')
 require('dotenv').config()
-const SECRET = process.env.SECRET
 const jwt = require('jsonwebtoken')
+const SECRET = process.env.SECRET
 
 const generateToken = (info) => {
     return jwt.sign(
@@ -18,7 +18,6 @@ const generateToken = (info) => {
         }
     )
 }
-
 
 module.exports = {
     postReview: async (req, res) => {
@@ -63,6 +62,7 @@ module.exports = {
         try {
             if (await bcrypt.compare(password, foundUser.password)) {
                 let token = generateToken(req.body)
+                console.log('the controller token', token)
                 res.status(200).send(token)
 
             } else {

@@ -13,6 +13,9 @@ function App() {
   const [movieList, setMovieList] = useState([]);
   const [watchList, setWatchList] = useState([]);
   const [inWatchList, setInWatchList] = useState(false);
+  const [token, setToken] = useState('');
+
+  console.log('the token is in the APP', token)
 
   const movieDB = async () => {
     try {
@@ -47,7 +50,7 @@ function App() {
 
   return (
     <Fragment>
-      <Header />
+      <Header token={token}/>
       <Routes>
         <Route
           index
@@ -72,7 +75,7 @@ function App() {
           }
         />
         <Route path="review" element={<MovieReview />} />
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<Login token={token} setToken={setToken} />} />
       </Routes>
     </Fragment>
   );
